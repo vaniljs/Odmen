@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `edum`
+-- База данных: `dodom`
 --
 
 -- --------------------------------------------------------
@@ -33,8 +33,8 @@ CREATE TABLE `accounts` (
   `seldate` varchar(200) CHARACTER SET utf8 NOT NULL,
   `seller` varchar(100) CHARACTER SET utf8 NOT NULL,
   `selorder` int(6) NOT NULL,
-  `edulogin` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `edupassword` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `dodologin` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `dodopassword` varchar(100) CHARACTER SET utf8 NOT NULL,
   `priceold` float NOT NULL,
   `pricenew` float NOT NULL,
   `buyer` varchar(100) CHARACTER SET utf8 NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE `accounts` (
 -- Дамп данных таблицы `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `seldate`, `seller`, `selorder`, `edulogin`, `edupassword`, `priceold`, `pricenew`, `buyer`, `buyerip`) VALUES
+INSERT INTO `accounts` (`id`, `seldate`, `seller`, `selorder`, `dodologin`, `dodopassword`, `priceold`, `pricenew`, `buyer`, `buyerip`) VALUES
 (118, 'Игрушка', '', 7565453, 'a.sorokin59@yandex.ru', 'oveSwPnIfxoEpNxZVETA', 10, 545, 'a2716199@yandex.ru', '0'),
 (176, 'Цветок', '', 453457, 'a.sorokin59@yandex.ru', 'oveSwPnIfxoEpNxZVETA', 404, 0, 'a2716199@yandex.ru', '0'),
 (193, 'Камаз', '', 777, 'a.sorokin59@yandex.ru', 'oveSwPnIfxoEpNxZVETA', 101, 456, 'a2716199@yandex.ru', '0'),

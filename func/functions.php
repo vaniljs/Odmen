@@ -4,7 +4,9 @@ require 'db.php';
 $param = json_decode($_REQUEST["param"]);
 $user = R::findOne('users', 'password = ?', [$param->passenter]);
 
-//echo $_REQUEST["param"];
+if ( $_REQUEST["param"] == 'getaccounts' ) {
+    echo json_encode(R::getAll("SELECT * FROM `accounts`"));
+}
 
 if ( $param->passenter ) {
     if ( $user ) {
@@ -28,7 +30,7 @@ if ( $param->passreg && $_SERVER['SERVER_ADDR'] == '127.0.0.1' ) {
     } 
 }
 
-if ($param->dodologin) {
+if ( $param->addacc ) {
     $acc = R::dispense('accounts');
     $acc->seldate = date("d/m/Y");
     $acc->seller = $param->seller;
@@ -40,7 +42,7 @@ if ($param->dodologin) {
     $acc->buyer = $param->buyer;
     $acc->buyerip = $_SERVER['SERVER_ADDR'];
     R::store($acc);
-    echo 'added';
+    echo ' added';
 }
 
 if ($param->exit) {
@@ -51,7 +53,7 @@ if ($param->exit) {
 if ($param->delId) {
     $delRow = R::load('accounts', $param->delId);
     R::trash($delRow);
-    echo 'del';
+    echo ' del';
 }
 
 ?>

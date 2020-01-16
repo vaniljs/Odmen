@@ -9,13 +9,8 @@
 <body>
 
 <form class="enter">
-    <input type="text" name="passenter" value="777">
+    <input type="text" name="passenter" value="">
     <button type="submit">Enter</button>
-</form>
-
-<form class="reg">
-    <input type="text" name="passreg" value="777">
-    <button>Reg</button>
 </form>
 
 <div class="noti"></div>
