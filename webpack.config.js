@@ -6,18 +6,20 @@ const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-    //mode: 'development',
-    mode: 'production',
+    mode: 'development',
+    //mode: 'production',
     //devtool: 'inline-source-map',
     entry: {
         index: './src/index.js',
     },
     devServer: {
         contentBase: './dist',
+        historyApiFallback: true,
     },
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
     module: {
         rules: [
