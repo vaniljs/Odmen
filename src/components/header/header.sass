@@ -14,6 +14,19 @@
     li
       display: inline-block
       margin-right: 2rem
+      position: relative
     a
       text-decoration: none
       color: inherit
+    .active:after
+      position: absolute
+      content: ""
+      display: block
+      width: 7px
+      height: 7px
+      border-radius: 50%
+      background-color: black
+      overflow: auto;
+      margin: auto;
+      left: 0
+      right: 0

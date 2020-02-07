@@ -21,7 +21,7 @@ export default class CategoryList extends Component {
             });
 
         return (
-           <table className="table-list" border="1">
+           <table className="table_list" border="1">
                <thead>
                <tr>
                    <th>Название</th>
@@ -33,7 +33,7 @@ export default class CategoryList extends Component {
                </thead>
                <tbody>
                {categoryItemsShow}
-               <tr className="add-category">
+               <tr className="add_row">
                    <th><input type="text" placeholder="Название"/></th>
                    <th> </th>
                    <th><input type="text" placeholder="Комментарий"/></th>

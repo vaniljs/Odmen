@@ -9,6 +9,7 @@ export const categoryItems = [
     {id: 2, categoryName: "Origin", comment: "Комменатрий"},
     {id: 3, categoryName: "Epic", comment: "Комменатрий"},
     {id: 4, categoryName: "4Game", comment: "Комменатрий"},
+    {id: 5, categoryName: "Steam", comment: "Комменатрий"},
 ];
 
 export const Items = [

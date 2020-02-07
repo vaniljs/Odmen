@@ -1,14 +1,27 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import "./item-list.sass";
-import {Items} from "../api-data";
+import {Items, categoryItems} from "../api-data";
+import Select from "../select";
 
 
 export default class ItemList extends Component {
 
+    state = {
+        categoryItems: this.getCategoryItemUique(),
+    };
+
+    getCategoryItemUique() {
+        const arrayCat = [];
+        categoryItems.map(item => {
+            arrayCat.push(item.categoryName);
+        });
+        return [...new Set(arrayCat)];
+    }
+
     render() {
 
-        const itemsShow = Items.map( item => {
+        const itemsShow = Items.map(item => {
             return (
                 <tr key={item.id}>
                     <th>{item.id}</th>
@@ -28,7 +41,7 @@ export default class ItemList extends Component {
         });
 
         return (
-            <table className="table-list" border="1">
+            <table className="table_list" border="1">
                 <thead>
                 <tr>
                     <th>id</th>
@@ -45,9 +58,11 @@ export default class ItemList extends Component {
                 </thead>
                 <tbody>
                 {itemsShow}
-                <tr className="add-category">
+                <tr className="add_row">
                     <th>#</th>
-                    <th><input type="text" placeholder="Категория"/></th>
+                    <th className="add_category">
+                        <Select data_class="select" data_items={this.state.categoryItems} />
+                    </th>
                     <th><input type="text" placeholder="Статус"/></th>
                     <th><input type="text" placeholder="Продавец"/></th>
                     <th><input type="text" placeholder="Логин"/></th>
