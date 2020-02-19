@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<button>
+    Fetch
+</button>
+
+<script>
+    document.querySelector('button').addEventListener('click', async () => {
+        const data = { username1: 'example1', username2: 'example2' };
+        const url = "http://qeru.ru/functions/functions.php";
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                body: ('param=' + JSON.stringify(data)),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            });
+            //const json = await response.json();
+            //console.log('Успех:', json.username);
+            const json = await response.json();
+            console.log(json);
+        } catch (error) {
+            console.error('Ошибка:', error);
+        }
+    });
+</script>
+
+</body>
+</html>

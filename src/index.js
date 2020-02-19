@@ -8,6 +8,7 @@ import "./img/bin.svg";
 import "./img/question.svg";
 import "./img/tick.svg";
 import "./img/close.svg";
+import "./img/loader.svg";
 
 ReactDOM.render(<App />, document.getElementById('app'));
 

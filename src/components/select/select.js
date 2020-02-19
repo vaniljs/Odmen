@@ -20,7 +20,9 @@ export default class Select extends Component {
 
     render() {
 
-        const ShowListItem = this.state.items.map( (item) => {
+        let {checkedItem} = this.state;
+
+        const ShowListItem = this.state.items.map((item) => {
             return (
                 <div onClick={this.checkItem.bind(this)} key={item}>
                     {item}
@@ -30,9 +32,9 @@ export default class Select extends Component {
 
         return (
             <div className={this.props.data_class}>
-                {this.state.checkedItem &&
+                {checkedItem &&
                 <div className="checked">
-                    {this.state.checkedItem}
+                    {checkedItem}
                 </div>
                 }
                 {ShowListItem}
